@@ -991,12 +991,12 @@ Click the column names to reorder.</p>
 <tr>
 <th style="text-align: center;">Model name</th>
 <th style="text-align: center;">explicit_relevance_of_single_fragments</th>
-<th style="text-align: center;">relationship_selection</th>
-<th style="text-align: center;">entity_selection</th>
+<th style="text-align: center;">implicit_relevance_of_multiple_fragments</th>
+<th style="text-align: center;">property_selection</th>
 <th style="text-align: right;">property_exists</th>
-<th style="text-align: right;">implicit_relevance_of_multiple_fragments</th>
-<th style="text-align: right;">property_selection</th>
+<th style="text-align: right;">entity_selection</th>
 <th style="text-align: right;">query_generation</th>
+<th style="text-align: right;">relationship_selection</th>
 <th style="text-align: right;">end_to_end_query_generation</th>
 <th style="text-align: right;">Mean</th>
 </tr>
@@ -1006,10 +1006,10 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">gpt-3.5-turbo</td>
 <td style="text-align: center;">0.75</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.647059</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.647059</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.924632</td>
@@ -1018,11 +1018,11 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">gpt-4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.764706</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.764706</td>
 <td style="text-align: right;">0.964286</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.841124</td>
 </tr>
@@ -1030,83 +1030,83 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">llama-2-chat:7:ggmlv3:q5_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0.5</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.857143</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.357143</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.928571</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.334821</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.25</td>
-<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: right;">0.625</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.25</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">0.25</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.328125</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.25</td>
 <td style="text-align: right;">0.625</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.25</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.296875</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.821429</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.290179</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggmlv3:q8_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0.833333</td>
-<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.928571</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.282738</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggmlv3:q5_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.892857</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.267857</td>
 </tr>
@@ -1114,11 +1114,11 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">llama-2-chat:7:ggmlv3:q4_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.607143</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.263393</td>
 </tr>
@@ -1126,23 +1126,23 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">llama-2-chat:7:ggmlv3:q8_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: right;">0.666667</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.857143</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.252976</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggmlv3:q4_0</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.25</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.25</td>
 <td style="text-align: right;">0.714286</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.245536</td>
 </tr>
@@ -1150,23 +1150,23 @@ Click the column names to reorder.</p>
 <td style="text-align: center;">llama-2-chat:7:ggmlv3:q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.235294</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.235294</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.607143</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.230305</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggmlv3:q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.571429</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.196429</td>
 </tr>
