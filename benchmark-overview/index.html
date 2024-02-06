@@ -657,18 +657,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aggregated-scores" class="md-nav__link">
+  <a href="#scores-per-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Aggregated scores
+      Scores per model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#including-all-tasks" class="md-nav__link">
+  <a href="#scores-per-quantisation" class="md-nav__link">
     <span class="md-ellipsis">
-      Including all tasks
+      Scores per quantisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scores-of-all-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scores of all tasks
     </span>
   </a>
   
@@ -958,18 +967,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aggregated-scores" class="md-nav__link">
+  <a href="#scores-per-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Aggregated scores
+      Scores per model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#including-all-tasks" class="md-nav__link">
+  <a href="#scores-per-quantisation" class="md-nav__link">
     <span class="md-ellipsis">
-      Including all tasks
+      Scores per quantisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scores-of-all-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scores of all tasks
     </span>
   </a>
   
@@ -999,83 +1017,346 @@
 
 
 <h1 id="benchmark-results-overview">Benchmark Results - Overview</h1>
-<h2 id="aggregated-scores">Aggregated scores</h2>
+<h2 id="scores-per-model">Scores per model</h2>
 <p>Table sorted by mean score in descending order.
 Click the column names to reorder.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Model name</th>
+<th style="text-align: center;">Size</th>
 <th style="text-align: center;">Mean</th>
+<th style="text-align: right;">SD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">gpt-3.5-turbo</td>
-<td style="text-align: center;">0.924632</td>
-</tr>
-<tr>
 <td style="text-align: center;">gpt-4</td>
-<td style="text-align: center;">0.841124</td>
+<td style="text-align: center;">Unknown</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: right;">0.12</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q5_0</td>
-<td style="text-align: center;">0.357143</td>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: right;">0.16</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0.334821</td>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: right;">0.39</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0.328125</td>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
-<td style="text-align: center;">0.296875</td>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: right;">0.42</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">0.290179</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q8_0</td>
-<td style="text-align: center;">0.282738</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q5_0</td>
-<td style="text-align: center;">0.267857</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q4_0</td>
-<td style="text-align: center;">0.263393</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q8_0</td>
-<td style="text-align: center;">0.252976</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q4_0</td>
-<td style="text-align: center;">0.245536</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q2_K</td>
-<td style="text-align: center;">0.230305</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q2_K</td>
-<td style="text-align: center;">0.196429</td>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 </tbody>
 </table>
-<h2 id="including-all-tasks">Including all tasks</h2>
+<h2 id="scores-per-quantisation">Scores per quantisation</h2>
+<p>Table sorted by mean score in descending order.
+Click the column names to reorder.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Model name</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Quantisation</th>
+<th style="text-align: center;">Mean</th>
+<th style="text-align: right;">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">gpt-4</td>
+<td style="text-align: center;">Unknown</td>
+<td style="text-align: center;">nan</td>
+<td style="text-align: center;">nan</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: right;">0.12</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">nan</td>
+<td style="text-align: center;">nan</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: right;">0.16</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_M</td>
+<td style="text-align: center;">0.66</td>
+<td style="text-align: right;">0.41</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_K_M</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q3_K_M</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_0</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: right;">0.32</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_K_M</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_0</td>
+<td style="text-align: center;">0.46</td>
+<td style="text-align: right;">0.53</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_0</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_S</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_1</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: right;">0.48</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_1</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_0</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_M</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q8_0</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_K_M</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: right;">0.43</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q2_K</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: right;">0.42</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_S</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_M</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q6_K</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q8_0</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q6_K</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q2_K</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_0</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q4_K_M</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q3_K_M</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q3_K_M</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q5_0</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q2_K</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q6_K</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q2_K</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q3_K_M</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1</td>
+<td style="text-align: center;">46,7</td>
+<td style="text-align: center;">ggufv2</td>
+<td style="text-align: center;">Q8_0</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scores-of-all-tasks">Scores of all tasks</h2>
 <p>Wide table; you may need to scroll horizontally to see all columns.
 Table sorted by mean score in descending order.
 Click the column names to reorder.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Model name</th>
+<th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">explicit_relevance_of_single_fragments</th>
 <th style="text-align: center;">relationship_selection</th>
 <th style="text-align: center;">entity_selection</th>
@@ -1085,176 +1366,438 @@ Click the column names to reorder.</p>
 <th style="text-align: right;">query_generation</th>
 <th style="text-align: right;">end_to_end_query_generation</th>
 <th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">gpt-3.5-turbo</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.647059</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.924632</td>
-</tr>
-<tr>
 <td style="text-align: center;">gpt-4</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.764706</td>
-<td style="text-align: right;">0.964286</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.841124</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.857143</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.357143</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.928571</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.334821</td>
+<td style="text-align: right;">0.71875</td>
+<td style="text-align: right;">0.904182</td>
+<td style="text-align: right;">0.124256</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.25</td>
-<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.647059</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0.877757</td>
+<td style="text-align: right;">0.158246</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.65625</td>
+<td style="text-align: right;">0.413399</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.56875</td>
+<td style="text-align: right;">0.373277</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.65625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.516406</td>
+<td style="text-align: right;">0.339648</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.625</td>
-<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.328125</td>
+<td style="text-align: right;">0.486458</td>
+<td style="text-align: right;">0.31661</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.625</td>
-<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.296875</td>
+<td style="text-align: right;">0.465625</td>
+<td style="text-align: right;">0.377686</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.821429</td>
+<td style="text-align: right;">0.6875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.290179</td>
+<td style="text-align: right;">0.460938</td>
+<td style="text-align: right;">0.533028</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q8_0</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.3937</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.444792</td>
+<td style="text-align: right;">0.372886</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.429688</td>
+<td style="text-align: right;">0.475408</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.415625</td>
+<td style="text-align: right;">0.349763</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.407813</td>
+<td style="text-align: right;">0.399362</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.59375</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.407552</td>
+<td style="text-align: right;">0.347885</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.403125</td>
+<td style="text-align: right;">0.3447</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.398438</td>
+<td style="text-align: right;">0.426122</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.382812</td>
+<td style="text-align: right;">0.417439</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.380208</td>
+<td style="text-align: right;">0.393875</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0.833333</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.928571</td>
+<td style="text-align: right;">0.6875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.282738</td>
+<td style="text-align: right;">0.377604</td>
+<td style="text-align: right;">0.39944</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q5_0</td>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.377604</td>
+<td style="text-align: right;">0.39944</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.377604</td>
+<td style="text-align: right;">0.39944</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.65625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.357031</td>
+<td style="text-align: right;">0.344763</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0.333333</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.892857</td>
+<td style="text-align: right;">0.71875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.267857</td>
+<td style="text-align: right;">0.35026</td>
+<td style="text-align: right;">0.388708</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q4_0</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
+<td style="text-align: center;">0.416667</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: right;">0.625</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.607143</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.263393</td>
+<td style="text-align: right;">0.348958</td>
+<td style="text-align: right;">0.379566</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q8_0</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0.166667</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.2</td>
 <td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.857143</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.252976</td>
+<td style="text-align: right;">0.347917</td>
+<td style="text-align: right;">0.371879</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q4_0</td>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.345313</td>
+<td style="text-align: right;">0.371228</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">0.833333</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.335938</td>
+<td style="text-align: right;">0.346178</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
+<td style="text-align: center;">0.0833333</td>
 <td style="text-align: center;">0.25</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: right;">0.666667</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.714286</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.245536</td>
+<td style="text-align: right;">0.33125</td>
+<td style="text-align: right;">0.275812</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggmlv3:q2_K</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0.833333</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: center;">0.6</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.235294</td>
-<td style="text-align: right;">0.607143</td>
+<td style="text-align: right;">0.4375</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.230305</td>
+<td style="text-align: right;">0.325766</td>
+<td style="text-align: right;">0.296274</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggmlv3:q2_K</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.302083</td>
+<td style="text-align: right;">0.399517</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">0.833333</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.571429</td>
+<td style="text-align: right;">0.5625</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.196429</td>
+<td style="text-align: right;">0.299479</td>
+<td style="text-align: right;">0.40208</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.284375</td>
+<td style="text-align: right;">0.299201</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0.0833333</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.28125</td>
+<td style="text-align: right;">0.343434</td>
 </tr>
 </tbody>
 </table>
