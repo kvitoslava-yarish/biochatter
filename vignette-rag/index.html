@@ -12,7 +12,7 @@
         <link rel="prev" href="../benchmark-results/">
       
       
-        <link rel="next" href="../llm_connect-reference/">
+        <link rel="next" href="../vignette-kg/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Retrieval-Augmented Generation - BioChatter Documentation</title>
+        <title>Retrieval-Augmented Generation (RAG) - BioChatter Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vignette-retrieval-augmented-generation" class="md-skip">
+        <a href="#vignette-retrieval-augmented-generation-rag" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Retrieval-Augmented Generation
+              Retrieval-Augmented Generation (RAG)
             
           </span>
         </div>
@@ -713,7 +713,7 @@
           
   
   <span class="md-ellipsis">
-    Retrieval-Augmented Generation
+    Retrieval-Augmented Generation (RAG)
   </span>
   
 
@@ -724,7 +724,7 @@
         
   
   <span class="md-ellipsis">
-    Retrieval-Augmented Generation
+    Retrieval-Augmented Generation (RAG)
   </span>
   
 
@@ -795,7 +795,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -804,7 +804,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -813,7 +813,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -822,7 +822,7 @@
           <li class="md-nav__item">
   <a href="#message-from-you" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From You:
+      Message From You
     </span>
   </a>
   
@@ -831,7 +831,7 @@
           <li class="md-nav__item">
   <a href="#message-from-biochatter" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From BioChatter:
+      Message From BioChatter
     </span>
   </a>
   
@@ -840,7 +840,7 @@
           <li class="md-nav__item">
   <a href="#message-from-you_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From You:
+      Message From You
     </span>
   </a>
   
@@ -849,7 +849,7 @@
           <li class="md-nav__item">
   <a href="#message-from-biochatter_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From BioChatter:
+      Message From BioChatter
     </span>
   </a>
   
@@ -944,6 +944,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-kg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Knowledge Graph RAG
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1184,7 +1205,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -1193,7 +1214,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -1202,7 +1223,7 @@
           <li class="md-nav__item">
   <a href="#contextual-prompt_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Contextual Prompt:
+      Contextual Prompt
     </span>
   </a>
   
@@ -1211,7 +1232,7 @@
           <li class="md-nav__item">
   <a href="#message-from-you" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From You:
+      Message From You
     </span>
   </a>
   
@@ -1220,7 +1241,7 @@
           <li class="md-nav__item">
   <a href="#message-from-biochatter" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From BioChatter:
+      Message From BioChatter
     </span>
   </a>
   
@@ -1229,7 +1250,7 @@
           <li class="md-nav__item">
   <a href="#message-from-you_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From You:
+      Message From You
     </span>
   </a>
   
@@ -1238,7 +1259,7 @@
           <li class="md-nav__item">
   <a href="#message-from-biochatter_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Message From BioChatter:
+      Message From BioChatter
     </span>
   </a>
   
@@ -1352,7 +1373,7 @@
   
 
 
-<h1 id="vignette-retrieval-augmented-generation">Vignette: Retrieval-Augmented Generation</h1>
+<h1 id="vignette-retrieval-augmented-generation-rag">Vignette: Retrieval-Augmented Generation (RAG)</h1>
 <p>This vignette demonstrates the RAG module of BioChatter as used by the
 BioChatter Next application. This basic use case involves an LLM manuscript
 reading assistant and a vector database with embedded scientific manuscripts.
@@ -1415,15 +1436,15 @@ database instance, free of charge at
 <a href="https://next.biochatter.org">https://next.biochatter.org</a>.</p>
 <h2 id="conversations">Conversations</h2>
 <h3 id="biochatter-rag">BioChatter RAG</h3>
-<h4 id="contextual-prompt">Contextual Prompt:</h4>
+<h4 id="contextual-prompt">Contextual Prompt</h4>
 <p>You are an assistant to a biomedical researcher.</p>
-<h4 id="contextual-prompt_1">Contextual Prompt:</h4>
+<h4 id="contextual-prompt_1">Contextual Prompt</h4>
 <p>You have access to text fragments from one or multiple scientific manuscripts, which were retrieved by their semantic similarity to the user's question.</p>
-<h4 id="contextual-prompt_2">Contextual Prompt:</h4>
+<h4 id="contextual-prompt_2">Contextual Prompt</h4>
 <p>Your task is to help the user understand the manuscripts and their relevance to their questions. Be concise in your explanations, provide quotes from the manuscripts where appropriate, and be open about limitations in cases where the text does not contain pertinent information.</p>
-<h4 id="message-from-you">Message From You:</h4>
+<h4 id="message-from-you">Message From You</h4>
 <p>What is known about the CFTR protein in resistance to ovarian cancer?</p>
-<h4 id="message-from-biochatter">Message From BioChatter:</h4>
+<h4 id="message-from-biochatter">Message From BioChatter</h4>
 <p>Based on the provided information, there are several studies that suggest a potential role of the CFTR (Cystic Fibrosis Transmembrane Conductance Regulator) protein in resistance to ovarian cancer. Here are some key findings from the referenced manuscripts:</p>
 <ol>
 <li>
@@ -1449,9 +1470,9 @@ database instance, free of charge at
 </li>
 </ol>
 <p>It is important to note that while these studies suggest a potential association between CFTR and resistance to ovarian cancer, the exact mechanisms and clinical implications are still being investigated. Further research is needed to fully understand the role of CFTR in ovarian cancer resistance.</p>
-<h4 id="message-from-you_1">Message From You:</h4>
+<h4 id="message-from-you_1">Message From You</h4>
 <p>Tell me more about the studies of aggression and knockdown of CFTR in vivo.</p>
-<h4 id="message-from-biochatter_1">Message From BioChatter:</h4>
+<h4 id="message-from-biochatter_1">Message From BioChatter</h4>
 <p>Based on the provided information, there are two relevant studies regarding the aggression and knockdown of CFTR in ovarian cancer:</p>
 <ol>
 <li>
