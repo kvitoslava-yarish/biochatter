@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
     
     
       
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vectorstore_agent-reference.md" class="md-nav__link">
+      <a href="../vectorstore_agent-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1042,7 @@
 <p>In this set of tasks, we test LLM abilities to generate queries for a BioCypher Knowledge Graph using BioChatter.
 The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natural language query are passed to BioChatter.</p>
 <p>Individual steps of the query generation process are tested separately, as well as the end-to-end performance of the process.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="entity-selection" name="__tabbed_1" type="radio" /><input id="relationship-selection" name="__tabbed_1" type="radio" /><input id="property-selection" name="__tabbed_1" type="radio" /><input id="property-hallucination" name="__tabbed_1" type="radio" /><input id="query-generation" name="__tabbed_1" type="radio" /><input id="end-to-end-query-generation" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="entity-selection">Entity selection</label><label for="relationship-selection">Relationship selection</label><label for="property-selection">Property selection</label><label for="property-hallucination">Property hallucination</label><label for="query-generation">Query generation</label><label for="end-to-end-query-generation">End to end query generation</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="entity-selection" name="__tabbed_1" type="radio" /><input id="relationship-selection" name="__tabbed_1" type="radio" /><input id="property-selection" name="__tabbed_1" type="radio" /><input id="property-confabulation" name="__tabbed_1" type="radio" /><input id="naive-query-generation" name="__tabbed_1" type="radio" /><input id="biochatter-query-generation" name="__tabbed_1" type="radio" /><input id="end-to-end-query-generation" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="entity-selection">Entity selection</label><label for="relationship-selection">Relationship selection</label><label for="property-selection">Property selection</label><label for="property-confabulation">Property confabulation</label><label for="naive-query-generation">Naive query generation</label><label for="biochatter-query-generation">BioChatter query generation</label><label for="end-to-end-query-generation">End to end query generation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table>
@@ -1051,13 +1051,27 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
@@ -1071,10 +1085,17 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">3</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
@@ -1085,133 +1106,70 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.4</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.25</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.25</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.2</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
@@ -1225,65 +1183,58 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
@@ -1297,7 +1248,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
@@ -1317,42 +1268,56 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
@@ -1373,56 +1338,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
 <td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
@@ -1436,21 +1352,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
@@ -1464,56 +1366,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
@@ -1527,7 +1380,56 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
@@ -1543,11 +1445,18 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0.764706</td>
+<td style="text-align: center;">2</td>
+</tr>
 <tr>
 <td style="text-align: center;">gpt-4</td>
 <td style="text-align: center;">13</td>
@@ -1563,142 +1472,23 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">7</td>
 <td style="text-align: center;">17</td>
-<td style="text-align: center;">0.235294</td>
+<td style="text-align: center;">0.411765</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0.117647</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
+<td style="text-align: center;">17</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
@@ -1710,72 +1500,135 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: center;">17</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
+<td style="text-align: center;">17</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
@@ -1789,27 +1642,13 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1.25</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
@@ -1823,23 +1662,44 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
@@ -1851,14 +1711,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">1</td>
@@ -1872,156 +1725,107 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">3.5</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0.875</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.833333</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.875</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.833333</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.8</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.833333</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.833333</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">3.5</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">0.7</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">2.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.625</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">2.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.666667</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.6</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: center;">2</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.375</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
 <td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
@@ -2035,240 +1839,191 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
-<td style="text-align: center;">12</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">11</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.6875</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">gpt-4</td>
-<td style="text-align: center;">12</td>
+<td style="text-align: center;">11</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.6875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.625</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">11.5</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.71875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">gpt-3.5-turbo</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">10.5</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.65625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: center;">10.5</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.65625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.625</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">9.5</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0.59375</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: center;">8</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5625</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">8</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5625</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">8</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5625</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: center;">7.5</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5625</td>
+<td style="text-align: center;">0.46875</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">8</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">7</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.4375</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">8</td>
+<td style="text-align: center;">7</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.4375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">6.5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.40625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.3125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.3125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.1875</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: center;">2.5</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.4375</td>
+<td style="text-align: center;">0.15625</td>
 <td style="text-align: center;">2</td>
 </tr>
 </tbody>
@@ -2281,160 +2036,224 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
+<th style="text-align: center;">Iterations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-3.5-turbo</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.8125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.8125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.8125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.8125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">12.5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.78125</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">10.5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.65625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">5.5</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.34375</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0.1875</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Full model name</th>
+<th style="text-align: center;">Passed test cases</th>
+<th style="text-align: center;">Total test cases</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">gpt-4</td>
-<td style="text-align: center;">11.5</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.71875</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">gpt-3.5-turbo</td>
-<td style="text-align: center;">11</td>
+<td style="text-align: center;">15</td>
 <td style="text-align: center;">16</td>
-<td style="text-align: center;">0.6875</td>
+<td style="text-align: center;">0.9375</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
@@ -2448,28 +2267,70 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
@@ -2483,21 +2344,7 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
@@ -2511,7 +2358,63 @@ The <code>schema_config.yaml</code> of the BioCypher Knowledge Graph and a natur
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: center;">0</td>
@@ -2535,83 +2438,20 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">gpt-3.5-turbo</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">gpt-4</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
 <td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
@@ -2625,7 +2465,98 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
@@ -2639,7 +2570,7 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
@@ -2681,28 +2612,35 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">gpt-4</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">gpt-3.5-turbo</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0.833333</td>
@@ -2716,10 +2654,38 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.833333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0.833333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
@@ -2730,7 +2696,28 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.333333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.333333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.333333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0.333333</td>
@@ -2752,6 +2739,13 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 </tr>
 <tr>
 <td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.0833333</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">0.5</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0.0833333</td>
@@ -2782,11 +2776,18 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <th style="text-align: center;">Full model name</th>
 <th style="text-align: center;">Passed test cases</th>
 <th style="text-align: center;">Total test cases</th>
-<th style="text-align: center;">Score</th>
+<th style="text-align: center;">Accuracy</th>
 <th style="text-align: center;">Iterations</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
 <tr>
 <td style="text-align: center;">gpt-3.5-turbo</td>
 <td style="text-align: center;">2</td>
@@ -2795,14 +2796,7 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1</td>
@@ -2830,6 +2824,20 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">gpt-4</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
@@ -2837,21 +2845,28 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
-<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q2_K</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">1.5</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.75</td>
@@ -2865,6 +2880,13 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_S</td>
 <td style="text-align: center;">1.5</td>
 <td style="text-align: center;">2</td>
@@ -2872,63 +2894,28 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1.5</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: center;">1.5</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">1.5</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.75</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">code-llama-instruct:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.5</td>
@@ -2949,7 +2936,14 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.5</td>
@@ -2963,7 +2957,35 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_S</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.5</td>
@@ -2977,6 +2999,13 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
@@ -2984,14 +3013,21 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.5</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">llama-2-chat:70:ggufv2:Q2_K</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0.5</td>
@@ -3005,6 +3041,48 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
 <td style="text-align: center;">llama-2-chat:70:ggufv2:Q3_K_M</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
@@ -3012,10 +3090,17 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 <td style="text-align: center;">2</td>
 </tr>
 <tr>
-<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">code-llama-instruct:13:ggufv2:Q2_K</td>
 <td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.25</td>
 <td style="text-align: center;">2</td>
 </tr>
 </tbody>
@@ -3074,7 +3159,7 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
