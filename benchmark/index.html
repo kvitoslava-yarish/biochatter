@@ -1055,71 +1055,77 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">gpt-3.5-turbo</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.17</td>
 </tr>
 <tr>
 <td style="text-align: left;">gpt-4</td>
 <td style="text-align: right;">Unknown</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.11</td>
 </tr>
 <tr>
 <td style="text-align: left;">openhermes-2.5</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">0.34</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">0.27</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.57</td>
+<td style="text-align: right;">0.27</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">70</td>
-<td style="text-align: right;">0.62</td>
-<td style="text-align: right;">0.37</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">0.58</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
 <td style="text-align: left;">chatglm3</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">0.38</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">13</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.37</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">34</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1</td>
 <td style="text-align: right;">46,7</td>
+<td style="text-align: right;">0.31</td>
 <td style="text-align: right;">0.29</td>
-<td style="text-align: right;">0.32</td>
 </tr>
 </tbody>
 </table>
-<p><img alt="Boxplot Model" src="../boxplot-per-model.png" /></p>
+<p><img alt="Boxplot Model" src="../images/boxplot-per-model.png" /></p>
 <h2 id="scores-per-quantisation">Scores per quantisation</h2>
 <p>Table sorted by mean score in descending order.
 Click the column names to reorder.</p>
@@ -1136,20 +1142,20 @@ Click the column names to reorder.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">gpt-4</td>
-<td style="text-align: right;">Unknown</td>
-<td style="text-align: left;">nan</td>
-<td style="text-align: left;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.12</td>
-</tr>
-<tr>
 <td style="text-align: left;">gpt-3.5-turbo</td>
 <td style="text-align: right;">175</td>
 <td style="text-align: left;">nan</td>
 <td style="text-align: left;">nan</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.17</td>
+</tr>
+<tr>
+<td style="text-align: left;">gpt-4</td>
+<td style="text-align: right;">Unknown</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: left;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.11</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
@@ -1157,31 +1163,23 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_S</td>
 <td style="text-align: right;">0.88</td>
-<td style="text-align: right;">0.12</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q5_K_M</td>
-<td style="text-align: right;">0.88</td>
-<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.1</td>
 </tr>
 <tr>
 <td style="text-align: left;">openhermes-2.5</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.88</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr>
-<td style="text-align: left;">openhermes-2.5</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.39</td>
+<td style="text-align: left;">Q4_1</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
@@ -1189,7 +1187,7 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q6_K</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
@@ -1197,23 +1195,15 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q5_0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
@@ -1221,23 +1211,31 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_1</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: left;">Q4_0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">70</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: left;">Q5_0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q6_K</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
@@ -1245,55 +1243,31 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_S</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">openhermes-2.5</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_0</td>
+<td style="text-align: left;">Q3_K_M</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">openhermes-2.5</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_1</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">0.3</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.43</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q5_0</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.38</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q6_K</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.41</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1</td>
@@ -1301,79 +1275,39 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_0</td>
 <td style="text-align: right;">0.71</td>
-<td style="text-align: right;">0.29</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.4</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q5_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.35</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.24</td>
 </tr>
 <tr>
 <td style="text-align: left;">openhermes-2.5</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.39</td>
+<td style="text-align: left;">Q4_K_M</td>
+<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">0.37</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">70</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.41</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.68</td>
 <td style="text-align: right;">0.36</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">34</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
-<td style="text-align: left;">chatglm3</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">ggmlv3</td>
-<td style="text-align: left;">q4_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.35</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">70</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q5_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1</td>
@@ -1381,70 +1315,198 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q6_K</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.41</td>
+</tr>
+<tr>
+<td style="text-align: left;">openhermes-2.5</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.49</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q4_K_M</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.32</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatglm3</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">ggmlv3</td>
+<td style="text-align: left;">q4_0</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.38</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q8_0</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">34</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">0.29</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q4_K_M</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q8_0</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.29</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.36</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q5_K_M</td>
 <td style="text-align: right;">0.38</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">code-llama-instruct</td>
+<td style="text-align: right;">34</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q5_K_M</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.37</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.38</td>
-<td style="text-align: right;">0.3</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.35</td>
 <td style="text-align: right;">0.38</td>
 </tr>
 <tr>
@@ -1452,32 +1514,48 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">34</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.37</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1</td>
-<td style="text-align: right;">46,7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
-<td style="text-align: right;">34</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q5_K_M</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">Q4_K_M</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.36</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.31</td>
-<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1</td>
+<td style="text-align: right;">46,7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q3_K_M</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.27</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1</td>
+<td style="text-align: right;">46,7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1</td>
+<td style="text-align: right;">46,7</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q4_K_M</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1</td>
@@ -1485,75 +1563,69 @@ Click the column names to reorder.</p>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q5_0</td>
 <td style="text-align: right;">0.29</td>
-<td style="text-align: right;">0.21</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1</td>
-<td style="text-align: right;">46,7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.35</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1</td>
-<td style="text-align: right;">46,7</td>
-<td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.17</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">34</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q4_K_M</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">0.35</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.16</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.29</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1</td>
 <td style="text-align: right;">46,7</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q8_0</td>
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">0.38</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.36</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">mixtral-instruct-v0.1</td>
+<td style="text-align: right;">46,7</td>
 <td style="text-align: left;">ggufv2</td>
-<td style="text-align: left;">Q2_K</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.38</td>
+<td style="text-align: left;">Q5_K_M</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.33</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">ggufv2</td>
 <td style="text-align: left;">Q3_K_M</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">ggufv2</td>
+<td style="text-align: left;">Q2_K</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.36</td>
 </tr>
 </tbody>
 </table>
-<p><img alt="Boxplot Quantisation" src="../boxplot-per-quantisation.png" /></p>
+<p><img alt="Boxplot Quantisation" src="../images/boxplot-per-quantisation.png" />
+<img alt="Scatter Quantisation Name" src="../images/scatter-per-quantisation-name.png" />
+<img alt="Scatter Quantisation Size" src="../images/scatter-per-quantisation-size.png" /></p>
 <h2 id="scores-of-all-tasks">Scores of all tasks</h2>
 <p>Wide table; you may need to scroll horizontally to see all columns.
 Table sorted by mean score in descending order.
@@ -1571,25 +1643,12 @@ Click the column names to reorder.</p>
 <th style="text-align: right;">naive_query_generation_using_schema</th>
 <th style="text-align: right;">query_generation</th>
 <th style="text-align: right;">relationship_selection</th>
+<th style="text-align: right;">Mean Accuracy</th>
 <th style="text-align: right;">Median Accuracy</th>
 <th style="text-align: right;">SD</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align: left;">gpt-4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.764706</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.6875</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.11691</td>
-</tr>
 <tr>
 <td style="text-align: left;">gpt-3.5-turbo</td>
 <td style="text-align: right;">1</td>
@@ -1601,8 +1660,24 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">0.898284</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.180945</td>
+<td style="text-align: right;">0.171687</td>
+</tr>
+<tr>
+<td style="text-align: left;">gpt-4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.764706</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.939134</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.110926</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:13:ggufv2:Q4_K_S</td>
@@ -1616,21 +1691,8 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.125</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q5_K_M</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.125</td>
+<td style="text-align: right;">0.102062</td>
 </tr>
 <tr>
 <td style="text-align: left;">openhermes-2.5:7:ggufv2:Q8_0</td>
@@ -1643,148 +1705,9 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.625</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.338581</td>
-</tr>
-<tr>
-<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.394968</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q6_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q5_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.833333</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.4375</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.354524</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_1</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:70:ggufv2:Q5_K_M</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.4375</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.343089</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_K_S</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:13:ggufv2:Q4_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.712418</td>
+<td style="text-align: right;">0.793709</td>
+<td style="text-align: right;">0.318426</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:13:ggufv2:Q4_1</td>
@@ -1798,21 +1721,83 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
 </tr>
 <tr>
-<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q6_K</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.6875</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.433063</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q5_0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:13:ggufv2:Q4_0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:13:ggufv2:Q5_0</td>
@@ -1826,21 +1811,8 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:70:ggufv2:Q4_K_M</td>
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.4375</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.380116</td>
+<td style="text-align: right;">0.204124</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:13:ggufv2:Q6_K</td>
@@ -1854,7 +1826,68 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_K_S</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.204124</td>
+</tr>
+<tr>
+<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.411765</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.5625</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.697141</td>
+<td style="text-align: right;">0.74857</td>
+<td style="text-align: right;">0.31691</td>
+</tr>
+<tr>
+<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.411765</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.5625</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.674918</td>
+<td style="text-align: right;">0.737459</td>
+<td style="text-align: right;">0.303295</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.590278</td>
+<td style="text-align: right;">0.71875</td>
+<td style="text-align: right;">0.40987</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_0</td>
@@ -1868,133 +1901,68 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.708333</td>
-<td style="text-align: right;">0.291667</td>
+<td style="text-align: right;">0.708333</td>
+<td style="text-align: right;">0.238145</td>
 </tr>
 <tr>
-<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q8_0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.404832</td>
+<td style="text-align: right;">0.616667</td>
+<td style="text-align: right;">0.708333</td>
+<td style="text-align: right;">0.37167</td>
 </tr>
 <tr>
-<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q5_K_M</td>
+<td style="text-align: left;">llama-2-chat:70:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0.604167</td>
+<td style="text-align: right;">0.677083</td>
+<td style="text-align: right;">0.35862</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.833333</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.4375</td>
 <td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.352619</td>
+<td style="text-align: right;">0.577315</td>
+<td style="text-align: right;">0.663657</td>
+<td style="text-align: right;">0.333335</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat:70:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
+<td style="text-align: left;">llama-2-chat:70:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.8</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.588235</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">0.8</td>
 <td style="text-align: right;">0.4375</td>
 <td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.340787</td>
-</tr>
-<tr>
-<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q2_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.394405</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:70:ggufv2:Q2_K</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.409098</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.7</td>
-<td style="text-align: right;">0.3125</td>
-<td style="text-align: right;">0.78125</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.36453</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct:34:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.310689</td>
-</tr>
-<tr>
-<td style="text-align: left;">chatglm3:6:ggmlv3:q4_0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.764706</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.34375</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.352109</td>
-</tr>
-<tr>
-<td style="text-align: left;">code-llama-instruct:13:ggufv2:Q5_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.666667</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.39871</td>
+<td style="text-align: right;">0.559722</td>
+<td style="text-align: right;">0.654861</td>
+<td style="text-align: right;">0.321719</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
@@ -2009,6 +1977,82 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.408248</td>
+</tr>
+<tr>
+<td style="text-align: left;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.472222</td>
+<td style="text-align: right;">0.486111</td>
+<td style="text-align: right;">0.374096</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.3125</td>
+<td style="text-align: right;">0.8125</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.479167</td>
+<td style="text-align: right;">0.352503</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.3125</td>
+<td style="text-align: right;">0.78125</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.449306</td>
+<td style="text-align: right;">0.474653</td>
+<td style="text-align: right;">0.345574</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:70:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.588235</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.430637</td>
+<td style="text-align: right;">0.46875</td>
+<td style="text-align: right;">0.322833</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.764706</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.34375</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.428717</td>
+<td style="text-align: right;">0.464359</td>
+<td style="text-align: right;">0.333528</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:13:ggufv2:Q8_0</td>
@@ -2021,8 +2065,24 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.625</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.425926</td>
+<td style="text-align: right;">0.462963</td>
+<td style="text-align: right;">0.383305</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:13:ggufv2:Q5_K_M</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.404546</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.666667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.421296</td>
+<td style="text-align: right;">0.460648</td>
+<td style="text-align: right;">0.377699</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:7:ggufv2:Q8_0</td>
@@ -2035,8 +2095,84 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.1875</td>
 <td style="text-align: right;">0.8125</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.416667</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.345961</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:70:ggufv2:Q2_K</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.365386</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.416667</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.387502</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:7:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.416667</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.335645</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2:7:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.479167</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.389361</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q8_0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.416667</td>
+<td style="text-align: right;">0.458333</td>
+<td style="text-align: right;">0.383449</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:7:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.412037</td>
+<td style="text-align: right;">0.456019</td>
+<td style="text-align: right;">0.333745</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:34:ggufv2:Q2_K</td>
@@ -2049,50 +2185,69 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.625</td>
 <td style="text-align: right;">0.8125</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.388697</td>
+<td style="text-align: right;">0.409722</td>
+<td style="text-align: right;">0.454861</td>
+<td style="text-align: right;">0.368006</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: left;">code-llama-instruct:34:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.388889</td>
+<td style="text-align: right;">0.444444</td>
+<td style="text-align: right;">0.293333</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2:7:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.399218</td>
+</tr>
+<tr>
+<td style="text-align: left;">mistral-instruct-v0.2:7:ggufv2:Q2_K</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.625</td>
-<td style="text-align: right;">0.40625</td>
-<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.5625</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.40625</td>
-<td style="text-align: right;">0.377538</td>
+<td style="text-align: right;">0.368056</td>
+<td style="text-align: right;">0.434028</td>
+<td style="text-align: right;">0.341127</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat:13:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.833333</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.875</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.34144</td>
-</tr>
-<tr>
-<td style="text-align: left;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: left;">mistral-instruct-v0.2:7:ggufv2:Q8_0</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0.4375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.368483</td>
+<td style="text-align: right;">0.395833</td>
+<td style="text-align: right;">0.416667</td>
+<td style="text-align: right;">0.368751</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:7:ggufv2:Q2_K</td>
@@ -2105,50 +2260,69 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">0.303924</td>
+<td style="text-align: right;">0.452887</td>
+<td style="text-align: right;">0.413943</td>
+<td style="text-align: right;">0.287619</td>
 </tr>
 <tr>
-<td style="text-align: left;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: left;">llama-2-chat:13:ggufv2:Q8_0</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
-<td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0.40625</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
-<td style="text-align: right;">0.377716</td>
+<td style="text-align: right;">0.378472</td>
+<td style="text-align: right;">0.392361</td>
+<td style="text-align: right;">0.358091</td>
 </tr>
 <tr>
-<td style="text-align: left;">code-llama-instruct:34:ggufv2:Q8_0</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: left;">mistral-instruct-v0.2:7:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
-<td style="text-align: right;">0.368095</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.75</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.402778</td>
+<td style="text-align: right;">0.388889</td>
+<td style="text-align: right;">0.386423</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.375</td>
-<td style="text-align: right;">0.59375</td>
-<td style="text-align: right;">0.65625</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.333333</td>
-<td style="text-align: right;">0.295029</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.356944</td>
+<td style="text-align: right;">0.378472</td>
+<td style="text-align: right;">0.349395</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.34537</td>
+<td style="text-align: right;">0.372685</td>
+<td style="text-align: right;">0.323608</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:34:ggufv2:Q5_K_M</td>
@@ -2161,8 +2335,39 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.425926</td>
+<td style="text-align: right;">0.354167</td>
+<td style="text-align: right;">0.381028</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:34:ggufv2:Q8_0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">0.333333</td>
-<td style="text-align: right;">0.402059</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.398148</td>
+<td style="text-align: right;">0.354167</td>
+<td style="text-align: right;">0.348916</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-llama-instruct:13:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.625</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.37037</td>
+<td style="text-align: right;">0.351852</td>
+<td style="text-align: right;">0.358205</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:13:ggufv2:Q4_K_M</td>
@@ -2175,8 +2380,54 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.3125</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.3125</td>
-<td style="text-align: right;">0.389756</td>
+<td style="text-align: right;">0.381944</td>
+<td style="text-align: right;">0.347222</td>
+<td style="text-align: right;">0.369316</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">0.8125</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.298611</td>
+<td style="text-align: right;">0.336806</td>
+<td style="text-align: right;">0.273786</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">0.59375</td>
+<td style="text-align: right;">0.65625</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.300926</td>
+<td style="text-align: right;">0.31713</td>
+<td style="text-align: right;">0.279762</td>
+</tr>
+<tr>
+<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.166667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.8125</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.358796</td>
+<td style="text-align: right;">0.304398</td>
+<td style="text-align: right;">0.330834</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_0</td>
@@ -2190,35 +2441,8 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">nan</td>
 <td style="text-align: right;">0.291667</td>
-<td style="text-align: right;">0.208333</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.166667</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.8125</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.349996</td>
-</tr>
-<tr>
-<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q3_K_M</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">nan</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.291667</td>
+<td style="text-align: right;">0.170103</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:34:ggufv2:Q4_K_M</td>
@@ -2231,8 +2455,9 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.368932</td>
+<td style="text-align: right;">0.333333</td>
+<td style="text-align: right;">0.291667</td>
+<td style="text-align: right;">0.349332</td>
 </tr>
 <tr>
 <td style="text-align: left;">llama-2-chat:7:ggufv2:Q2_K</td>
@@ -2245,8 +2470,9 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.15625</td>
 <td style="text-align: right;">0.625</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.15625</td>
-<td style="text-align: right;">0.302669</td>
+<td style="text-align: right;">0.27662</td>
+<td style="text-align: right;">0.216435</td>
+<td style="text-align: right;">0.285435</td>
 </tr>
 <tr>
 <td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
@@ -2259,8 +2485,9 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.375</td>
 <td style="text-align: right;">0.8125</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0833333</td>
-<td style="text-align: right;">0.337138</td>
+<td style="text-align: right;">0.293981</td>
+<td style="text-align: right;">0.188657</td>
+<td style="text-align: right;">0.315136</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:13:ggufv2:Q2_K</td>
@@ -2273,22 +2500,24 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.4375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0833333</td>
-<td style="text-align: right;">0.378386</td>
+<td style="text-align: right;">0.293981</td>
+<td style="text-align: right;">0.166667</td>
+<td style="text-align: right;">0.355441</td>
 </tr>
 <tr>
-<td style="text-align: left;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: left;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_K_M</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.833333</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.46875</td>
-<td style="text-align: right;">0.1875</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.3125</td>
+<td style="text-align: right;">0.6875</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.38435</td>
+<td style="text-align: right;">0.266667</td>
+<td style="text-align: right;">0.133333</td>
+<td style="text-align: right;">0.332637</td>
 </tr>
 <tr>
 <td style="text-align: left;">code-llama-instruct:13:ggufv2:Q3_K_M</td>
@@ -2301,8 +2530,24 @@ Click the column names to reorder.</p>
 <td style="text-align: right;">0.59375</td>
 <td style="text-align: right;">0.875</td>
 <td style="text-align: right;">0</td>
+<td style="text-align: right;">0.302083</td>
+<td style="text-align: right;">0.125</td>
+<td style="text-align: right;">0.372543</td>
+</tr>
+<tr>
+<td style="text-align: left;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.400209</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.833333</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.46875</td>
+<td style="text-align: right;">0.1875</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.27662</td>
+<td style="text-align: right;">0.09375</td>
+<td style="text-align: right;">0.359313</td>
 </tr>
 </tbody>
 </table>
