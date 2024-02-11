@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -379,14 +379,15 @@
     
     
     
-    
-    
+      
+        
+        
       
       
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
@@ -691,20 +692,18 @@
     
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -780,20 +779,18 @@
     
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -869,20 +866,18 @@
     
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1142,7 +1137,10 @@
 <h1 id="benchmarking">Benchmarking</h1>
 <p>For trustworthy application of LLMs to real-world and biomedical problems, it is imperative to understand their performance and limitations.
 We need to constantly evaluate the multitude of combinations of individual models and versions, their parameters (e.g., temperature), prompt sets, databases and vector databases, and diverse application scenarios.
-To this end, we are maintaining a living benchmarking framework that allows us to continuously compare the performance of different models and configurations on a variety of tasks.</p>
+To this end, we are maintaining a living benchmarking framework that allows us to continuously compare the performance of different models and configurations on a variety of tasks.
+The procedure of the living benchmark follows the idea of test-driven development, in that test cases are added with practical reference to a desired feature or behaviour.
+For cases where a model does not yield a perfect response out of the box, which will be most cases, modifications to the components of the framework, such as prompts or functions, are made to improve the model's performance.
+By tracking model performance on these tests over time, we can gain insights into the reliability of the framework and identify the gaps to be addressed.</p>
 <p>The benchmark uses the pytest framework to orchestrate the evaluation of a number of models on a number of tasks.
 The benchmark is run on a regular basis, and the results are published in the <a href="https://biochatter.org/benchmark/">benchmark section</a>.
 The benchmarking suite can be found in the <code>benchmark</code> directory of the BioChatter repository.
