@@ -157,12 +157,14 @@ def create_overview_table(result_files_path: str, result_file_names: list[str]):
     # add size 175 for gpt-3.5-turbo and Unknown for gpt-4
     overview_per_quantisation["Size"] = overview_per_quantisation.apply(
         lambda row: (
-            "175" if row["Model name"] == "gpt-3.5-turbo" else row["Size"]
+            "175" if "gpt-3.5-turbo" in row["Model name"] else row["Size"]
         ),
         axis=1,
     )
     overview_per_quantisation["Size"] = overview_per_quantisation.apply(
-        lambda row: "Unknown" if row["Model name"] == "gpt-4" else row["Size"],
+        lambda row: (
+            "Unknown" if "gpt-4" in row["Model name"] else row["Size"]
+        ),
         axis=1,
     )
     overview_per_quantisation = overview_per_quantisation[
@@ -257,7 +259,9 @@ def plot_accuracy_per_task(overview):
 
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10, 6))
-    sns.boxplot(x="Task", y="Accuracy", hue="Model name", data=overview_melted)
+    sns.scatterplot(
+        x="Task", y="Accuracy", hue="Model name", data=overview_melted
+    )
     plt.title("Boxplot across models, per Task")
     plt.xticks(rotation=45)
     plt.savefig(
@@ -485,7 +489,8 @@ def melt_and_process(overview):
     overview_melted["Quantisation"] = overview_melted.apply(
         lambda row: (
             ">= 16-bit*"
-            if row["Model name"] in ["gpt-3.5-turbo", "gpt-4"]
+            if "gpt-3.5-turbo" in row["Model name"]
+            or "gpt-4" in row["Model name"]
             else row["Quantisation"]
         ),
         axis=1,
