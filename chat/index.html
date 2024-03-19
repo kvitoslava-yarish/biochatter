@@ -509,6 +509,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-openai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using OpenAI models
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1019,6 +1028,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-openai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using OpenAI models
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1062,6 +1080,8 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">msg</span><span class="p">,</span> <span class="n">token_usage</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Question here&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Note that a query will automatically append a user message to the message history, so there is no need to call <code>append_user_message()</code> again. The query function returns the actual answer of the model (<code>msg</code>), the token usage statistics reported by the API (<code>token_usage</code>), and an optional <code>correction</code> that contains the opinion of the corrective agent.</p>
+<h2 id="using-openai-models">Using OpenAI models</h2>
+<p>Using an OpenAI model via the API is generally the easiest way to get started, but requires the provision of an API key to the OpenAI API. To do this, you can designate the <code>OPENAI_API_KEY</code> variable in your environment directly (<code>export OPENAI_API_KEY=sk-...</code>) by adding it to your shell configuration (e.g., the <code>zshrc</code>).</p>
 
 
 
