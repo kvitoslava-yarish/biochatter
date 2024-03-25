@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -800,6 +800,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developer Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1189,11 +1210,12 @@ For cases where a model does not yield a perfect response out of the box, which 
 By tracking model performance on these tests over time, we can gain insights into the reliability of the framework and identify the gaps to be addressed.</p>
 <h2 id="running-the-benchmark">Running the benchmark</h2>
 <p>The benchmark uses the pytest framework to orchestrate the evaluation of a number of models on a number of tasks.
-The benchmark is run on a regular basis, and the results are published in the <a href="https://biochatter.org/benchmark/">benchmark section</a>.
+The benchmark is run on a regular basis, and the results are published in the <a href="../benchmark/">benchmark section</a>.
 The benchmarking suite can be found in the <code>benchmark</code> directory of the BioChatter repository.
 It can be executed using standard pytest syntax, e.g., <code>poetry run pytest benchmark</code>.
 As default behavior it checks, which test cases have already been executed and only executes the tests that have not been executed yet.
-To run all benchmarks again, use <code>poetry run pytest benchmark --run-all</code>.</p>
+To run all benchmarks again, use <code>poetry run pytest benchmark --run-all</code>.
+If you want to develop and debug the benchmark instead of just running it, please refer to the <a href="../benchmark-developer/">developer docs</a>.</p>
 <p>To allow flexible extension of the benchmark, we have implemeted a modular test framework that uses pytest fixtures to allow easy addition of new models and tasks.
 All setup is done in the <code>conftest.py</code> file in the <code>benchmark</code> directory.
 The benchmarks are organised by module, task, and subtask.
