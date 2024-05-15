@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1120,9 +1120,9 @@
 
 
 <a id="biochatter.prompts"></a>
-  <div class="doc doc-contents first">
+    <div class="doc doc-contents first">
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1138,18 +1138,18 @@
 
 
 <h2 id="biochatter.prompts.BioCypherPromptEngine" class="doc doc-heading">
-          <code>BioCypherPromptEngine</code>
+            <code>BioCypherPromptEngine</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
+    <div class="doc doc-contents ">
 
 
-            <details class="quote">
-              <summary>Source code in <code>biochatter/prompts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
+              <details class="quote">
+                <summary>Source code in <code>biochatter/prompts.py</code></summary>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
 <span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
 <span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
 <span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
@@ -2269,12 +2269,11 @@
 </span><span id="__span-0-569"><a id="__codelineno-0-569" name="__codelineno-0-569"></a>                <span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>
 </span><span id="__span-0-570"><a id="__codelineno-0-570" name="__codelineno-0-570"></a>            <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -2287,15 +2286,14 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="biochatter.prompts.BioCypherPromptEngine.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">schema_config_or_info_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema_config_or_info_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;gpt-3.5-turbo&#39;</span><span class="p">,</span> <span class="n">conversation_factory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">schema_config_or_info_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema_config_or_info_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;gpt-3.5-turbo&#39;</span><span class="p">,</span> <span class="n">conversation_factory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Given a biocypher schema configuration, extract the entities and
 relationships, and for each extract their mode of representation (node
 or edge), properties, and identifier namespace. Using these data, allow
@@ -2304,89 +2302,88 @@ the schema constituents and their properties, to enable the
 parameterisation of function calls to a knowledge graph.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>schema_config_or_info_path</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Path to a biocypher schema configuration
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>schema_config_or_info_path</code></td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[str]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to a biocypher schema configuration
 file or the extended schema information output generated by
 BioCypher's <code>write_schema_info</code> function (preferred).</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>schema_config_or_info_dict</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[dict]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A dictionary containing the schema
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>schema_config_or_info_dict</code></td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[dict]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary containing the schema
 configuration file or the extended schema information output
 generated by BioCypher's <code>write_schema_info</code> function
 (preferred).</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>model_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The name of the model to use for the conversation.
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>model_name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the model to use for the conversation.
 DEPRECATED: This should now be set in the conversation factory.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;gpt-3.5-turbo&#39;</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>conversation_factory</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[callable]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A function used to create a conversation for
+              </div>
+            </td>
+            <td>
+                  <code>&#39;gpt-3.5-turbo&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>conversation_factory</code></td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[callable]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A function used to create a conversation for
 creating the KG query. If not provided, a default function is
 used (creating an OpenAI conversation with the specified model,
 see <code>_get_conversation</code>).</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>biochatter/prompts.py</code></summary>
-            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
+            <details class="quote">
+              <summary>Source code in <code>biochatter/prompts.py</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
 <span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
 <span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
 <span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
@@ -2610,98 +2607,94 @@ see <code>_get_conversation</code>).</p>
 </span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">rel_directions</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model_name</span> <span class="o">=</span> <span class="n">model_name</span>
 </span></code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="biochatter.prompts.BioCypherPromptEngine.generate_query" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">generate_query</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">query_language</span><span class="o">=</span><span class="s1">&#39;Cypher&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">generate_query</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">query_language</span><span class="o">=</span><span class="s1">&#39;Cypher&#39;</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Wrap entity and property selection and query generation; return the
 generated query.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>question</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A user's question.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>query_language</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The language of the query to generate.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;Cypher&#39;</code>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>question</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A user's question.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>query_language</code></td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[str]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The language of the query to generate.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Cypher&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A database query that could answer the user's question.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A database query that could answer the user's question.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>biochatter/prompts.py</code></summary>
-            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-152">152</a></span>
+            <details class="quote">
+              <summary>Source code in <code>biochatter/prompts.py</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-152">152</a></span>
 <span class="normal"><a href="#__codelineno-0-153">153</a></span>
 <span class="normal"><a href="#__codelineno-0-154">154</a></span>
 <span class="normal"><a href="#__codelineno-0-155">155</a></span>
@@ -2799,8 +2792,8 @@ generated query.</p>
 </span><span id="__span-0-199"><a id="__codelineno-0-199" name="__codelineno-0-199"></a>        <span class="n">conversation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">conversation_factory</span><span class="p">(),</span>
 </span><span id="__span-0-200"><a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2808,8 +2801,7 @@ generated query.</p>
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
 
@@ -2818,7 +2810,7 @@ generated query.</p>
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -2873,7 +2865,7 @@ generated query.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
