@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.732c4fb1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -783,9 +783,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-up-the-test-data-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the test data pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-new-test-procedures" class="md-nav__link">
     <span class="md-ellipsis">
       Creating new test procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the benchmark
     </span>
   </a>
   
@@ -1137,9 +1155,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-up-the-test-data-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the test data pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-new-test-procedures" class="md-nav__link">
     <span class="md-ellipsis">
       Creating new test procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the benchmark
     </span>
   </a>
   
@@ -1321,7 +1357,29 @@ prompts at three different levels of detail (<code>simple</code>, <code>more_exp
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">      </span><span class="nt">answer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span>
 </span></code></pre></div>
 <p>Upon instantiation of the test matrix, this definition will be expanded into
-three full tests, each with their respective prompt setup.</p>
+three full tests, each with their respective prompt setup. You can define as
+many combinations as you like (for instance, you could also define a list of
+prompts in this example), but be aware that the number of tests will grow
+exponentially with the number of combinations.</p>
+<h2 id="setting-up-the-test-data-pipeline">Setting up the test data pipeline</h2>
+<p>Test data are provided to the test functions via fixtures. The fixtures are
+defined in the <code>conftest.py</code> file and are used to load the test data from the
+YAML files. If you add a new test module or a function with a new kind of test
+data, you need to add the corresponding fixture to the <code>pytest_generate_tests</code>
+function in <code>conftest.py</code>. This function is responsible for loading the test
+data and providing appropriately named fixtures to the test functions. For the
+tests defined above, this equates to:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">data_file</span> <span class="o">=</span> <span class="n">BENCHMARK_DATASET</span><span class="p">[</span><span class="s2">&quot;benchmark_data.yaml&quot;</span><span class="p">]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">if</span> <span class="s2">&quot;test_data_rag_interpretation&quot;</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">fixturenames</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">metafunc</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="s2">&quot;test_data_rag_interpretation&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            <span class="n">data_file</span><span class="p">[</span><span class="s2">&quot;rag_interpretation&quot;</span><span class="p">],</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="p">)</span>
+</span></code></pre></div>
+<p>We prepend the fixtures with <code>test_data_</code> for consistency and higher code
+readability. For more information, see the <a href="https://docs.pytest.org/en/latest/example/parametrize.html">Pytest
+Documentation</a>.</p>
 <h2 id="creating-new-test-procedures">Creating new test procedures</h2>
 <p>If a new kind of test requires a bespoke procedure, such as evaluating a newly
 introduced functionality or calculating a score in a distinct way, we can
@@ -1332,21 +1390,22 @@ parameters:</p>
 <ul>
 <li>
 <p>the <code>model_name</code> fixture, to be able to record a model-specific benchmark
-metric</p>
+metric;</p>
 </li>
 <li>
 <p>a <code>test_data</code> object that is generated from the benchmark dataset according to
-the name of the test module (e.g., <code>test_data_rag_interpretation</code>)</p>
+the name of the test module (e.g., <code>test_data_rag_interpretation</code>). This is the
+fixture you defined above in <code>conftest.py</code>;</p>
 </li>
 <li>
-<p>a <code>conversation</code> instance (the connection to the LLM to be tested)</p>
+<p>a <code>conversation</code> instance (the connection to the LLM to be tested);</p>
 </li>
 <li>
 <p>the <code>multiple_testing</code> fixture that implements running the test multiple times
-and averaging the results</p>
+and averaging the results;</p>
 </li>
 <li>
-<p>any number of additional inputs that may be required for the tests</p>
+<p>any number of additional inputs that may be required for the tests.</p>
 </li>
 </ul>
 <p>For instance, the knowledge graph query generation tests acquire additional
@@ -1354,6 +1413,30 @@ tests inputs from the YAML definition (the schema of the BioCypher knowledge
 graph underlying the test) and additional functionality from BioChatter (an
 instance of the prompt engine class that generates the knowledge graph query
 using the aforementioned schema).</p>
+<h2 id="running-the-benchmark">Running the benchmark</h2>
+<p>If everything is set up correctly, you can run the benchmark by executing the
+following command in the root directory of the repository:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>benchmark
+</span></code></pre></div>
+<p>We need to specify the <code>benchmark</code> directory to run the benchmark tests, because
+we also have regular tests in the <code>test</code> directory. If you want to run only a
+specific test module, you can specify the file name (or use any other Pytest
+workflow).</p>
+<div class="admonition warning">
+<p class="admonition-title">Skipping tests</p>
+<p>For efficiency reasons, we by default do not rerun tests that have already
+been executed for a given model and test case. For this purpose, we store
+the results in the <code>benchmark/results</code> directory, including, for every test
+case, an md5 hash of the input data. If you want to rerun a test, you can
+delete the corresponding line (or entire file) in the <code>results</code> directory.</p>
+</div>
+<p>We re-run the benchmark automatically if a test case has changed (reflected in
+a different md5 hash) or if there is a new <code>biochatter</code> version (potentially
+introducing changes in the behviour of the framework). If a test case has
+changed, the old result is automatically removed from the result files. You can
+also force a rerun of all tests by using the <code>--run-all</code> flag:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>benchmark<span class="w"> </span>--run-all
+</span></code></pre></div>
 <h2 id="running-open-source-models">Running open-source models</h2>
 <p>To execute the benchmark on any of the open-source models in the test matrix,
 you need to deploy an <a href="https://inference.readthedocs.io/en/latest/">Xorbits
@@ -1365,8 +1448,8 @@ to the Xinference
 for details.</p>
 <p>When you have deployed the Xinference server, you can point the benchmark
 to the server by setting the <code>BENCHMARK_URL</code> parameter in <code>conftest.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Xinference IP and port</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">BENCHMARK_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:9997&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Xinference IP and port</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">BENCHMARK_URL</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:9997&quot;</span>
 </span></code></pre></div>
 
 
@@ -1420,7 +1503,7 @@ to the server by setting the <code>BENCHMARK_URL</code> parameter in <code>conft
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5cfa9459.min.js"></script>
+      <script src="../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
