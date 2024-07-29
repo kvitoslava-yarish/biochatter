@@ -1701,10 +1701,10 @@ generation tasks by embedding documents.</p>
 </span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>
 </span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        Args:</span>
 </span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">            used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">            used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">                Defaults to False.</span>
 </span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">            online (bool, optional): whether we are running ChatGSE online.</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">            online (bool, optional): whether we are running the frontend online.</span>
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">                Defaults to False.</span>
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>
 </span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">            chunk_size (int, optional): size of chunks to split text into.</span>
@@ -1920,10 +1920,10 @@ generation tasks by embedding documents.</p>
 
     Args:
 
-        used (bool, optional): whether RAG has been used (ChatGSE setting).
+        used (bool, optional): whether RAG has been used (frontend setting).
             Defaults to False.
 
-        online (bool, optional): whether we are running ChatGSE online.
+        online (bool, optional): whether we are running the frontend online.
             Defaults to False.
 
         chunk_size (int, optional): size of chunks to split text into.
@@ -2126,10 +2126,10 @@ generation tasks by embedding documents.</p>
 </span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>
 </span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">            Defaults to False.</span>
 </span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        online (bool, optional): whether we are running ChatGSE online.</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        online (bool, optional): whether we are running the frontend online.</span>
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">            Defaults to False.</span>
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>
 </span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        chunk_size (int, optional): size of chunks to split text into.</span>
@@ -2963,7 +2963,7 @@ loaded as-is, pdf files are converted to text using fitz.</p>
 </span><span id="__span-0-390"><a id="__codelineno-0-390" name="__codelineno-0-390"></a>
 </span><span id="__span-0-391"><a id="__codelineno-0-391" name="__codelineno-0-391"></a><span class="sd">        Args:</span>
 </span><span id="__span-0-392"><a id="__codelineno-0-392" name="__codelineno-0-392"></a>
-</span><span id="__span-0-393"><a id="__codelineno-0-393" name="__codelineno-0-393"></a><span class="sd">            used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-393"><a id="__codelineno-0-393" name="__codelineno-0-393"></a><span class="sd">            used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-394"><a id="__codelineno-0-394" name="__codelineno-0-394"></a>
 </span><span id="__span-0-395"><a id="__codelineno-0-395" name="__codelineno-0-395"></a><span class="sd">            chunk_size (int, optional): size of chunks to split text into.</span>
 </span><span id="__span-0-396"><a id="__codelineno-0-396" name="__codelineno-0-396"></a>
@@ -3056,7 +3056,7 @@ loaded as-is, pdf files are converted to text using fitz.</p>
       <p>Extension of the DocumentEmbedder class that uses Ollama for
 embeddings.</p>
 <p>Args:</p>
-<div class="language-text highlight"><pre><span></span><code>used (bool, optional): whether RAG has been used (ChatGSE setting).
+<div class="language-text highlight"><pre><span></span><code>used (bool, optional): whether RAG has been used (frontend setting).
 
 chunk_size (int, optional): size of chunks to split text into.
 
@@ -3207,7 +3207,7 @@ performed across all documents in the database.
 </span><span id="__span-0-390"><a id="__codelineno-0-390" name="__codelineno-0-390"></a>
 </span><span id="__span-0-391"><a id="__codelineno-0-391" name="__codelineno-0-391"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-392"><a id="__codelineno-0-392" name="__codelineno-0-392"></a>
-</span><span id="__span-0-393"><a id="__codelineno-0-393" name="__codelineno-0-393"></a><span class="sd">        used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-393"><a id="__codelineno-0-393" name="__codelineno-0-393"></a><span class="sd">        used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-394"><a id="__codelineno-0-394" name="__codelineno-0-394"></a>
 </span><span id="__span-0-395"><a id="__codelineno-0-395" name="__codelineno-0-395"></a><span class="sd">        chunk_size (int, optional): size of chunks to split text into.</span>
 </span><span id="__span-0-396"><a id="__codelineno-0-396" name="__codelineno-0-396"></a>
@@ -3452,7 +3452,7 @@ performed across all documents in the database.
 </span><span id="__span-0-262"><a id="__codelineno-0-262" name="__codelineno-0-262"></a>
 </span><span id="__span-0-263"><a id="__codelineno-0-263" name="__codelineno-0-263"></a><span class="sd">        Args:</span>
 </span><span id="__span-0-264"><a id="__codelineno-0-264" name="__codelineno-0-264"></a>
-</span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">            used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">            used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-266"><a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 </span><span id="__span-0-267"><a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">            chunk_size (int, optional): size of chunks to split text into.</span>
 </span><span id="__span-0-268"><a id="__codelineno-0-268" name="__codelineno-0-268"></a>
@@ -3583,7 +3583,7 @@ performed across all documents in the database.
       <p>Extension of the DocumentEmbedder class that uses Xinference for
 embeddings.</p>
 <p>Args:</p>
-<div class="language-text highlight"><pre><span></span><code>used (bool, optional): whether RAG has been used (ChatGSE setting).
+<div class="language-text highlight"><pre><span></span><code>used (bool, optional): whether RAG has been used (frontend setting).
 
 chunk_size (int, optional): size of chunks to split text into.
 
@@ -3741,7 +3741,7 @@ performed across all documents in the database.
 </span><span id="__span-0-262"><a id="__codelineno-0-262" name="__codelineno-0-262"></a>
 </span><span id="__span-0-263"><a id="__codelineno-0-263" name="__codelineno-0-263"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-264"><a id="__codelineno-0-264" name="__codelineno-0-264"></a>
-</span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">        used (bool, optional): whether RAG has been used (ChatGSE setting).</span>
+</span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">        used (bool, optional): whether RAG has been used (frontend setting).</span>
 </span><span id="__span-0-266"><a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 </span><span id="__span-0-267"><a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">        chunk_size (int, optional): size of chunks to split text into.</span>
 </span><span id="__span-0-268"><a id="__codelineno-0-268" name="__codelineno-0-268"></a>
