@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://biochatter.org/api-reference/</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://biochatter.org/api/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
@@ -36,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://biochatter.org/kg-reference/</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://biochatter.org/kgs/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
@@ -61,11 +71,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://biochatter.org/prompts-reference/</loc>
-         <lastmod>2024-07-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://biochatter.org/rag/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
@@ -76,12 +81,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://biochatter.org/vectorstore-reference/</loc>
+         <loc>https://biochatter.org/reflexion-reference/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://biochatter.org/vectorstore_agent-reference/</loc>
+         <loc>https://biochatter.org/vectorstore-reference/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
