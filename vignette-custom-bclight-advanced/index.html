@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -1277,6 +1277,17 @@ Project board. The pre-existing KG build and deploy scripts were used via the
 <code>docker-compose.yml</code> file. For public deployment, we also added a
 <code>docker-compose-password.yml</code>, which builds a password-protected version of the
 KG. Deployment and setup of the cloud VM took another ~2h.</p>
+<p>The schema of the knowledge graph is as follows:</p>
+<pre class="mermaid"><code>graph LR;
+    Person -- Leads --&gt; Project
+    Project -- PartOf --&gt; Iteration
+    Project -- HasComment --&gt; Comment</code></pre>
+<p>Other available fields include <code>Title</code>, <code>Assignees</code>, <code>Status</code>, <code>Labels</code>,
+<code>Linked pull requests</code>, <code>Milestone</code>, <code>Repository</code>, <code>Reviewers</code>, <code>Priority</code>,
+<code>Size</code>, <code>Estimate</code>, <code>Iteration</code>, <code>Start date</code>, and <code>End date</code>. Some of these,
+such as <code>Priority</code> and <code>Size</code>, are properties of the project item in our current
+implementation. These assignments, including the schmema of the graph, can be
+flexibly adapted by using BioCypher mechanisms.</p>
 <p>Be aware that running this script will require a GitHub token with access to the
 project board. This token should be stored in the environment variable
 <code>BIOCYPHER_GITHUB_PROJECT_TOKEN</code>.</p>
