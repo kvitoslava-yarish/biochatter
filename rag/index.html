@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#retrieval-augmented-generation-rag" class="md-skip">
+        <a href="#retrieval-augmented-generation" class="md-skip">
           Skip to content
         </a>
       
@@ -1902,7 +1902,7 @@
   
 
 
-<h1 id="retrieval-augmented-generation-rag">Retrieval-Augmented Generation (RAG)</h1>
+<h1 id="retrieval-augmented-generation">Retrieval-Augmented Generation</h1>
 <h2 id="overview">Overview</h2>
 <p>To provide a unified interface for various ways of retrieval-augmented
 generation (RAG), we provide an implementation that connects to different types
@@ -1991,6 +1991,21 @@ knowledge graph (<code>schema_info.yaml</code>), which contains more information
 to LLM interaction with the database.  The current prototypical implementation
 of query generation through an LLM is implemented in the <code>prompts.py</code> module on
 the example of a Neo4j knowledge graph connection.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User/Primary Agent
+    participant DatabaseAgent
+    participant Knowledge Graph
+
+    User/Primary Agent -&gt;&gt; DatabaseAgent: question
+    Knowledge Graph -&gt;&gt; DatabaseAgent: schema information
+    DatabaseAgent -&gt;&gt; DatabaseAgent: select entities
+    DatabaseAgent -&gt;&gt; DatabaseAgent: select relationships
+    DatabaseAgent -&gt;&gt; DatabaseAgent: select properties
+    DatabaseAgent -&gt;&gt; DatabaseAgent: generate query
+    DatabaseAgent -&gt;&gt; Knowledge Graph: submit query
+    Knowledge Graph -&gt;&gt; DatabaseAgent: return results
+    DatabaseAgent -&gt;&gt; DatabaseAgent: summarise (optional)
+    DatabaseAgent -&gt;&gt; User/Primary Agent: return results</code></pre>
 <h3 id="connecting">Connecting</h3>
 <p>The database connectivity of BioChatter to BioCypher knowledge graphs is handled
 by the <code>DatabaseAgent</code> class (in <code>database_agent.py</code>). In addition, database
@@ -2115,6 +2130,20 @@ BioChatter Docker compose found in this repository.  To start Milvus on its own
 in these repositories, you can call <code>docker compose up -d standalone</code>
 (<code>standalone</code> being the Milvus endpoint, which starts two other services
 alongside it).</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User/Primary Agent
+    participant VectorDatabaseAgent
+    participant Vector Database
+    participant Documents
+
+    Documents -&gt;&gt; Vector Database: embed text fragments
+    User/Primary Agent -&gt;&gt; VectorDatabaseAgent: question
+    VectorDatabaseAgent -&gt;&gt; VectorDatabaseAgent: generate artificial answer (optional)
+    VectorDatabaseAgent -&gt;&gt; VectorDatabaseAgent: embed question or artificial answer
+    VectorDatabaseAgent -&gt;&gt; Vector Database: submit search query embedding
+    Vector Database -&gt;&gt; VectorDatabaseAgent: return most similar embedded fragments
+    VectorDatabaseAgent -&gt;&gt; VectorDatabaseAgent: summarise (optional)
+    VectorDatabaseAgent -&gt;&gt; User/Primary Agent: return results</code></pre>
 <h3 id="connecting_1">Connecting</h3>
 <p>To connect to a vector DB host, we can use the corresponding class:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">biochatter.vectorstore_agent</span> <span class="kn">import</span> <span class="n">VectorDatabaseAgentMilvus</span>
@@ -2173,6 +2202,20 @@ determine which we want to delete.</p>
 Agent. It is designed to interact with various external APIs and provides a
 structured approach to generating queries, fetching results, and interpreting
 the responses from different API services.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User/Primary Agent
+    participant APIAgent
+    participant External Software
+
+    External Software -&gt;&gt; APIAgent: API definition
+    User/Primary Agent -&gt;&gt; APIAgent: question
+    APIAgent -&gt;&gt; APIAgent: parameterise API
+    APIAgent -&gt;&gt; APIAgent: generate API query
+    APIAgent -&gt;&gt; External Software: submit query (optional)
+    APIAgent -&gt;&gt; External Software: fetch result
+    External Software -&gt;&gt; APIAgent: return result
+    APIAgent -&gt;&gt; APIAgent: summarise / interpret (optional)
+    APIAgent -&gt;&gt; User/Primary Agent: return results</code></pre>
 <h3 id="example-oncokb-integration">Example: OncoKB Integration</h3>
 <p>The OncoKB API integration allows users to query oncologically relevant genomic
 information. Here's a minimal working example:</p>
