@@ -756,6 +756,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#medical-exam-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medical Exam Question Answering
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1187,6 +1196,15 @@
   <a href="#text-extraction" class="md-nav__link">
     <span class="md-ellipsis">
       Text Extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medical-exam-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medical Exam Question Answering
     </span>
   </a>
   
@@ -11262,6 +11280,348 @@ Instructions can be explicit ("is this fragment relevant to the question?") or i
 </div>
 </div>
 <p><img alt="Stripplot Extraction Subtask" src="../../images/stripplot-extraction-tasks.png" /></p>
+<h2 id="medical-exam-question-answering">Medical Exam Question Answering</h2>
+<p>In this set of tasks, we test LLM abilities to answer medical exam questions.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="overall-performance_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="overall-performance_1">Overall Performance</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Full model name</th>
+<th style="text-align: center;">Score achieved</th>
+<th style="text-align: center;">Score possible</th>
+<th style="text-align: center;">Score SD</th>
+<th style="text-align: center;">Accuracy</th>
+<th style="text-align: right;">Iterations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">gpt-4o-mini-2024-07-18</td>
+<td style="text-align: center;">1349</td>
+<td style="text-align: center;">1605</td>
+<td style="text-align: center;">1.44215</td>
+<td style="text-align: center;">0.840498</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-4-turbo-2024-04-09</td>
+<td style="text-align: center;">1360</td>
+<td style="text-align: center;">1620</td>
+<td style="text-align: center;">3.231</td>
+<td style="text-align: center;">0.839506</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-4-0125-preview</td>
+<td style="text-align: center;">831</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">4.04145</td>
+<td style="text-align: center;">0.77591</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-4o-2024-05-13</td>
+<td style="text-align: center;">817</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">4.04145</td>
+<td style="text-align: center;">0.762838</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-4-0613</td>
+<td style="text-align: center;">782</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">3.4641</td>
+<td style="text-align: center;">0.730159</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">gpt-3.5-turbo-0125</td>
+<td style="text-align: center;">718</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">7.50555</td>
+<td style="text-align: center;">0.670401</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-3-instruct:8:ggufv2:Q8_0</td>
+<td style="text-align: center;">684</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.638655</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-3-instruct:8:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">678</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.633053</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-3-instruct:8:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">667</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.622782</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-3-instruct:8:ggufv2:Q6_K</td>
+<td style="text-align: center;">666</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.621849</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">628</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">1.73205</td>
+<td style="text-align: center;">0.586368</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">618</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.577031</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">615</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.57423</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">612</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.571429</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">604</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">1.73205</td>
+<td style="text-align: center;">0.563959</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">openhermes-2.5:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">576</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.537815</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">462</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.431373</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q8_0</td>
+<td style="text-align: center;">462</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.431373</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q6_K</td>
+<td style="text-align: center;">459</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.428571</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">459</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.428571</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">459</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.428571</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">chatglm3:6:ggmlv3:q4_0</td>
+<td style="text-align: center;">457</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">21.6162</td>
+<td style="text-align: center;">0.426704</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:13:ggufv2:Q2_K</td>
+<td style="text-align: center;">444</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.414566</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">435</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.406162</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">429</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.40056</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">429</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.40056</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">429</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.40056</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">423</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.394958</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">llama-2-chat:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">396</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.369748</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">395</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.368814</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q8_0</td>
+<td style="text-align: center;">393</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.366947</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q6_K</td>
+<td style="text-align: center;">393</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.366947</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q4_K_M</td>
+<td style="text-align: center;">391</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.365079</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">390</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.364146</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q3_K_M</td>
+<td style="text-align: center;">386</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.360411</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q8_0</td>
+<td style="text-align: center;">384</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.358543</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mistral-instruct-v0.2:7:ggufv2:Q2_K</td>
+<td style="text-align: center;">378</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.352941</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q5_K_M</td>
+<td style="text-align: center;">378</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.352941</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q6_K</td>
+<td style="text-align: center;">367</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.34267</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">mixtral-instruct-v0.1:46_7:ggufv2:Q2_K</td>
+<td style="text-align: center;">353</td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">0.57735</td>
+<td style="text-align: center;">0.329599</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
 
