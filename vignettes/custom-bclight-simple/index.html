@@ -929,6 +929,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-decider-use-case/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light and Next - Cancer Genetics Use Case
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1241,6 +1262,12 @@ in the <code>environment</code> section of the <code>app</code> service.</p>
 to <code>true</code>, which tells BioChatter Light to connect to the KG on the Docker
 network, which uses the service name as the hostname, so in this case, <code>deploy</code>
 instead of the default <code>localhost</code>.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">Authentication</p>
+<p>For using the app with the standard OpenAI LLM, we need to provide the
+<code>OPENAI_API_KEY</code> environment variable. This key can be obtained from the
+OpenAI website.</p>
+</div>
 <p>We then turn off all default tabs (chatting, prompt engineering, RAG, and the
 correcting agent) and turn on the KG tab. Running the docker compose with these
 settings will build and deploy the KG and the BioChatter Light web app with only

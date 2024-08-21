@@ -111,6 +111,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://biochatter.org/vignettes/custom-decider-use-case/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://biochatter.org/vignettes/kg/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>

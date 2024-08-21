@@ -14,7 +14,7 @@
         <link rel="prev" href="../custom-bclight-simple/">
       
       
-        <link rel="next" href="../../api-docs/">
+        <link rel="next" href="../custom-decider-use-case/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -965,6 +965,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-decider-use-case/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light and Next - Cancer Genetics Use Case
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1297,6 +1318,12 @@ data for demonstration purposes. The repository to build the KG and deploy the
 BioChatter Light web app is available
 <a href="https://github.com/biocypher/project-planning">here</a>.</p>
 <h2 id="build-the-kg">Build the KG</h2>
+<div class="admonition info inline end">
+<p class="admonition-title">GitHub Project access token</p>
+<p>Be aware that running this script will require a GitHub token with access to
+the project board. This token should be stored in the environment variable
+<code>BIOCYPHER_GITHUB_PROJECT_TOKEN</code>.</p>
+</div>
 <p>We modified an existing adapter for the GitHub GraphQL API to pull data from the
 GitHub Project board. Thus, the time investment to build the KG was minimal
 (~3h); this is one central principle of BioCypher. We adapted the code
@@ -1317,9 +1344,6 @@ KG. Deployment and setup of the cloud VM took another ~2h.</p>
 such as <code>Priority</code> and <code>Size</code>, are properties of the project item in our current
 implementation. These assignments, including the schmema of the graph, can be
 flexibly adapted by using BioCypher mechanisms.</p>
-<p>Be aware that running this script will require a GitHub token with access to the
-project board. This token should be stored in the environment variable
-<code>BIOCYPHER_GITHUB_PROJECT_TOKEN</code>.</p>
 <h2 id="add-the-additional-tabs-to-biochatter-light">Add the additional tabs to BioChatter Light</h2>
 <p>BioChatter Light has a modular architecture to accommodate flexible layout
 changes. We also added a configuration that allows turning on or off specific
@@ -1374,18 +1398,22 @@ header, and subheader for the web app without having to change the source code.<
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">THIS_WEEKS_TASKS_TAB=true</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TASK_SETTINGS_PANEL_TAB=true</span>
 </span></code></pre></div>
+<div class="admonition info inline end">
+<p class="admonition-title">Authentication</p>
+<p>For using the app with the standard OpenAI LLM, we need to provide the
+<code>OPENAI_API_KEY</code> environment variable. This key can be obtained from the
+OpenAI website.</p>
+</div>
 <p>You can see the full configuration in the <code>docker-compose.yml</code> file of the
 <a href="https://github.com/biocypher/project-planning">project-planning</a> repository.
 For public deployment, we also added a password-protected version of the KG,
 which only requires a few additional lines in the <code>docker-compose-password.yml</code>
-file. To deploy the tool on a cloud VM, we now only need to run the following
+file.</p>
+<p>To deploy the tool on a cloud VM, we now only need to run the following
 commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/biocypher/project-planning.git
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker-compose<span class="w"> </span>-f<span class="w"> </span>project-planning/docker-compose-password.yml<span class="w"> </span>up<span class="w"> </span>-d
 </span></code></pre></div>
-<p>We just need to make sure to provide an <code>OPENAI_API_KEY</code> and a
-<code>BIOCYPHER_GITHUB_PROJECT_TOKEN</code> in the VM's environment to be accessed by the
-Docker workflow.</p>
 <h2 id="useful-tips-for-deployment">Useful tips for deployment</h2>
 <p>Many vendors offer cloud VMs with pre-installed Docker and Docker Compose, as
 well as Nginx for reverse proxying. We recommend using a reverse proxy to
@@ -1399,12 +1427,16 @@ can use the following Nginx configuration:</p>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8501</span><span class="p">;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="kn">proxy_read_timeout</span><span class="w"> </span><span class="mi">86400</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>You can find more info
 <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04">here</a>.
