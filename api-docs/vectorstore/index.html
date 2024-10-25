@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1726,6 +1726,11 @@ vectorstore services and semantic search.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -1747,6 +1752,11 @@ vectorstore services and semantic search.</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -2594,6 +2604,11 @@ Returns:
     <div class="doc doc-contents ">
 
 
+
+
+
+
+
               <details class="quote">
                 <summary>Source code in <code>biochatter/vectorstore.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-457">457</a></span>
@@ -2789,7 +2804,9 @@ with metadata.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>pdf</code></td>
+            <td>
+                <code>pdf</code>
+            </td>
             <td>
                   <code>bytes</code>
             </td>
@@ -2912,7 +2929,9 @@ with metadata.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>txt</code></td>
+            <td>
+                <code>txt</code>
+            </td>
             <td>
                   <code>bytes</code>
             </td>
@@ -3021,7 +3040,9 @@ loaded as-is, pdf files are converted to text using fitz.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>path</code></td>
+            <td>
+                <code>path</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3149,6 +3170,11 @@ loaded as-is, pdf files are converted to text using fitz.</p>
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
               Bases: <code><a class="autorefs autorefs-internal" title="biochatter.vectorstore.DocumentEmbedder" href="#biochatter.vectorstore.DocumentEmbedder">DocumentEmbedder</a></code></p>
+
+
+
+
+
 
 
               <details class="quote">
@@ -3600,6 +3626,11 @@ performed across all documents in the database.
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
               Bases: <code><a class="autorefs autorefs-internal" title="biochatter.vectorstore.DocumentEmbedder" href="#biochatter.vectorstore.DocumentEmbedder">DocumentEmbedder</a></code></p>
+
+
+
+
+
 
 
               <details class="quote">
@@ -4142,7 +4173,9 @@ Xinference server.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>type</code></td>
+            <td>
+                <code>type</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4290,6 +4323,11 @@ write them to <code>self.models</code>.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4330,6 +4368,11 @@ includes the following operations:</p>
 <li>remove a document from the currently active database using
     <code>remove_document()</code></li>
 </ol>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/vectorstore_agent.py</code></summary>
@@ -5446,7 +5489,9 @@ includes the following operations:</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>embedding_func</code></td>
+            <td>
+                <code>embedding_func</code>
+            </td>
             <td>
                   <code><span title="langchain_community.embeddings.OpenAIEmbeddings">OpenAIEmbeddings</span></code>
             </td>
@@ -5460,7 +5505,9 @@ includes the following operations:</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>connection_args</code></td>
+            <td>
+                <code>connection_args</code>
+            </td>
             <td>
                   <code>Optional dict</code>
             </td>
@@ -5474,7 +5521,9 @@ includes the following operations:</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>embedding_collection_name</code></td>
+            <td>
+                <code>embedding_collection_name</code>
+            </td>
             <td>
                   <code>Optional str</code>
             </td>
@@ -5488,7 +5537,9 @@ includes the following operations:</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>metadata_collection_name</code></td>
+            <td>
+                <code>metadata_collection_name</code>
+            </td>
             <td>
                   <code>Optional str</code>
             </td>
@@ -5632,7 +5683,9 @@ collections don't exist, create the two collections.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>doc_ids</code></td>
+            <td>
+                <code>doc_ids</code>
+            </td>
             <td>
                   <code>List[str] optional</code>
             </td>
@@ -5759,7 +5812,9 @@ documents occurs</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>doc_id</code></td>
+            <td>
+                <code>doc_id</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5773,7 +5828,9 @@ documents occurs</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>doc_ids</code></td>
+            <td>
+                <code>doc_ids</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[list[str]]</code>
             </td>
@@ -5936,7 +5993,9 @@ according to the input query.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query</code></td>
+            <td>
+                <code>query</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5950,7 +6009,9 @@ according to the input query.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>k</code></td>
+            <td>
+                <code>k</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -5964,7 +6025,9 @@ according to the input query.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>doc_ids</code></td>
+            <td>
+                <code>doc_ids</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[list[str]]</code>
             </td>
@@ -6113,7 +6176,9 @@ similarity search across the specified documents</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>documents</code></td>
+            <td>
+                <code>documents</code>
+            </td>
             <td>
                   <code>List[Documents]</code>
             </td>
@@ -6226,7 +6291,9 @@ DocumentReader.document_from_txt</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>docs</code></td>
+            <td>
+                <code>docs</code>
+            </td>
             <td>
                   <code>List[<span title="langchain.schema.Document">Document</span>]</code>
             </td>
@@ -6240,7 +6307,9 @@ DocumentReader.document_from_txt</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>meta_id</code></td>
+            <td>
+                <code>meta_id</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -6359,7 +6428,9 @@ embedding.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>metadata</code></td>
+            <td>
+                <code>metadata</code>
+            </td>
             <td>
                   <code>List[Dict]</code>
             </td>
@@ -6373,7 +6444,9 @@ embedding.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>isDeleted</code></td>
+            <td>
+                <code>isDeleted</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[bool]</code>
             </td>
@@ -6546,7 +6619,7 @@ metadata fields.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

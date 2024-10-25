@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1551,6 +1551,11 @@ reflexion on a user-defined task.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -1580,6 +1585,11 @@ reflexion on a user-defined task.</p>
 <p>start -&gt; draft -&gt; execute tool -&gt; revise -&gt; evaluation -&gt; end
                     /|\                        |
                      ---------------------------</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/langgraph_agent_base.py</code></summary>
@@ -2060,7 +2070,9 @@ reflexion on a user-defined task.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>conversation_factory</code></td>
+            <td>
+                <code>conversation_factory</code>
+            </td>
             <td>
                   <code><span title="collections.abc.Callable">Callable</span></code>
             </td>
@@ -2074,7 +2086,9 @@ reflexion on a user-defined task.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_steps</code></td>
+            <td>
+                <code>max_steps</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -2168,7 +2182,9 @@ returning the final answer.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2182,7 +2198,9 @@ returning the final answer.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>prompt</code></td>
+            <td>
+                <code>prompt</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2287,6 +2305,11 @@ question will be returned, otherwise, it returns None</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -2522,6 +2545,11 @@ Args:
 
         <p>Raise request to LLM with 3 retries</p>
 
+
+
+
+
+
               <details class="quote">
                 <summary>Source code in <code>biochatter/langgraph_agent_base.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
@@ -2717,6 +2745,11 @@ state List[BaseMessage]: message history</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -2743,6 +2776,11 @@ state List[BaseMessage]: message history</p>
 
 
         <p>Generate the query.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/kg_langgraph_agent.py</code></summary>
@@ -2802,6 +2840,11 @@ state List[BaseMessage]: message history</p>
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
               Bases: <code><a class="autorefs autorefs-internal" title="biochatter.langgraph_agent_base.ReflexionAgent" href="#biochatter.langgraph_agent_base.ReflexionAgent">ReflexionAgent</a></code></p>
+
+
+
+
+
 
 
               <details class="quote">
@@ -3338,7 +3381,9 @@ query implementation.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>conversation_factory</code></td>
+            <td>
+                <code>conversation_factory</code>
+            </td>
             <td>
                   <code><span title="collections.abc.Callable">Callable</span></code>
             </td>
@@ -3353,7 +3398,9 @@ the LLM connection</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>connection_args</code></td>
+            <td>
+                <code>connection_args</code>
+            </td>
             <td>
                   <code>dict[str, str]</code>
             </td>
@@ -3367,7 +3414,9 @@ the LLM connection</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>query_lang</code></td>
+            <td>
+                <code>query_lang</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -3381,7 +3430,9 @@ the LLM connection</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_steps</code></td>
+            <td>
+                <code>max_steps</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -3544,6 +3595,11 @@ the LLM connection</p>
 
         <p>Revise your previous query according to your question.</p>
 
+
+
+
+
+
               <details class="quote">
                 <summary>Source code in <code>biochatter/kg_langgraph_agent.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-86">86</a></span>
@@ -3638,7 +3694,7 @@ the LLM connection</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

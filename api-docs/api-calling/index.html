@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1983,6 +1983,11 @@ parameterisation of API calls by the LLM.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -2014,6 +2019,11 @@ and saving results of queries. It has to implement a <code>fetch_results()</code
 method, which can wrap a multi-step procedure to submit and retrieve. Should
 implement retry method to account for connectivity issues or processing
 times.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/abc.py</code></summary>
@@ -2113,7 +2123,9 @@ the case of long processing times as in the case of BLAST).</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_model</code></td>
+            <td>
+                <code>query_model</code>
+            </td>
             <td>
                   <code><span title="pydantic.BaseModel">BaseModel</span></code>
             </td>
@@ -2193,6 +2205,11 @@ the case of long processing times as in the case of BLAST).</p>
         <p>Abstract base class for result interpreters. The interpreter is aware of the
 nature and structure of the results and can extract and summarise
 information from them.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/abc.py</code></summary>
@@ -2308,7 +2325,9 @@ information from them.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2322,7 +2341,9 @@ information from them.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation_factory</code></td>
+            <td>
+                <code>conversation_factory</code>
+            </td>
             <td>
                   <code><span title="collections.abc.Callable">Callable</span></code>
             </td>
@@ -2337,7 +2358,9 @@ BioChatter conversation.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>response_text</code></td>
+            <td>
+                <code>response_text</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2469,6 +2492,11 @@ specifics of the results.</p>
 
 
         <p>An abstract base class for query builders.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/abc.py</code></summary>
@@ -2681,7 +2709,9 @@ method to generate the Callable.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_parameters</code></td>
+            <td>
+                <code>query_parameters</code>
+            </td>
             <td>
                   <code><span title="pydantic.BaseModel">BaseModel</span></code>
             </td>
@@ -2696,7 +2726,9 @@ the API that should be queried.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -2816,7 +2848,9 @@ instance. Must be implemented by subclasses.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2830,7 +2864,9 @@ instance. Must be implemented by subclasses.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -2948,6 +2984,11 @@ that should parameterise the query.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -2969,6 +3010,11 @@ that should parameterise the query.</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -3410,7 +3456,9 @@ attribute.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3536,7 +3584,9 @@ attribute.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_model</code></td>
+            <td>
+                <code>query_model</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3705,6 +3755,11 @@ question using a BioChatter conversation instance.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3733,6 +3788,11 @@ question using a BioChatter conversation instance.</p>
         <p>A class for retrieving API results from BLAST given a parameterised
 BlastQuery.</p>
 <p>TODO add a limit of characters to be returned from the response.text?</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/blast.py</code></summary>
@@ -4021,7 +4081,9 @@ submission and retrieval of results.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_model</code></td>
+            <td>
+                <code>query_model</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.api_agent.blast.BlastQueryParameters" href="#biochatter.api_agent.blast.BlastQueryParameters">BlastQueryParameters</a></code>
             </td>
@@ -4035,7 +4097,9 @@ submission and retrieval of results.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>retries</code></td>
+            <td>
+                <code>retries</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -4145,6 +4209,11 @@ submission and retrieval of results.</p>
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
               Bases: <code><a class="autorefs autorefs-internal" title="biochatter.api_agent.abc.BaseInterpreter" href="#biochatter.api_agent.abc.BaseInterpreter">BaseInterpreter</a></code></p>
+
+
+
+
+
 
 
               <details class="quote">
@@ -4261,7 +4330,9 @@ submission and retrieval of results.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4275,7 +4346,9 @@ submission and retrieval of results.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation_factory</code></td>
+            <td>
+                <code>conversation_factory</code>
+            </td>
             <td>
                   <code><span title="collections.abc.Callable">Callable</span></code>
             </td>
@@ -4289,7 +4362,9 @@ submission and retrieval of results.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>response_text</code></td>
+            <td>
+                <code>response_text</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4430,6 +4505,11 @@ submission and retrieval of results.</p>
 
 
         <p>A class for building a BlastQuery object.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/blast.py</code></summary>
@@ -4586,7 +4666,9 @@ submission and retrieval of results.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_parameters</code></td>
+            <td>
+                <code>query_parameters</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.api_agent.blast.BlastQueryParameters" href="#biochatter.api_agent.blast.BlastQueryParameters">BlastQueryParameters</a></code>
             </td>
@@ -4601,7 +4683,9 @@ the API that should be queried.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -4722,7 +4806,9 @@ parameterise functions.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4736,7 +4822,9 @@ parameterise functions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -4868,6 +4956,11 @@ BlastQuery.</p>
         <p>BlastQuery is a Pydantic model for the parameters of a BLAST query request,
 used for configuring and sending a request to the NCBI BLAST query API. The
 fields are dynamically configured by the LLM based on the user's question.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/blast.py</code></summary>
@@ -5030,6 +5123,11 @@ fields are dynamically configured by the LLM based on the user's question.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5057,6 +5155,11 @@ fields are dynamically configured by the LLM based on the user's question.</p>
 
         <p>A class for retrieving API results from OncoKB given a parameterized
 OncoKBQuery.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/oncokb.py</code></summary>
@@ -5182,7 +5285,9 @@ this case.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>request_data</code></td>
+            <td>
+                <code>request_data</code>
+            </td>
             <td>
                   <code><span title="biochatter.api_agent.oncokb.OncoKBQueryParameters">OncoKBQueryParameters</span></code>
             </td>
@@ -5307,6 +5412,11 @@ OncoKB query parameters.</p>
               Bases: <code><a class="autorefs autorefs-internal" title="biochatter.api_agent.abc.BaseInterpreter" href="#biochatter.api_agent.abc.BaseInterpreter">BaseInterpreter</a></code></p>
 
 
+
+
+
+
+
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/oncokb.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-290">290</a></span>
@@ -5427,7 +5537,9 @@ OncoKB query parameters.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5441,7 +5553,9 @@ OncoKB query parameters.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation_factory</code></td>
+            <td>
+                <code>conversation_factory</code>
+            </td>
             <td>
                   <code><span title="collections.abc.Callable">Callable</span></code>
             </td>
@@ -5455,7 +5569,9 @@ OncoKB query parameters.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>response_text</code></td>
+            <td>
+                <code>response_text</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5602,6 +5718,11 @@ OncoKB query parameters.</p>
 
 
         <p>A class for building an OncoKBQuery object.</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>biochatter/api_agent/oncokb.py</code></summary>
@@ -5758,7 +5879,9 @@ OncoKB query parameters.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>query_parameters</code></td>
+            <td>
+                <code>query_parameters</code>
+            </td>
             <td>
                   <code><span title="biochatter.api_agent.oncokb.OncoKBQueryParameters">OncoKBQueryParameters</span></code>
             </td>
@@ -5773,7 +5896,9 @@ the API that should be queried.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -5894,7 +6019,9 @@ parameterise functions.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>question</code></td>
+            <td>
+                <code>question</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5908,7 +6035,9 @@ parameterise functions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>conversation</code></td>
+            <td>
+                <code>conversation</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-internal" title="biochatter.llm_connect.Conversation" href="../llm_connect/#biochatter.llm_connect.Conversation">Conversation</a></code>
             </td>
@@ -6081,7 +6210,7 @@ OncoKBQuery.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "search.suggest", "search.highlight", "navigation.instant", "navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
